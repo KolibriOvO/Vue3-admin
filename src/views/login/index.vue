@@ -37,7 +37,7 @@ const login = async () => {
   }
 }
 const validatorUserName = (rule:any,value:any,callback:any)=>{
-  if (/^\d{5,10}$/.test(value)){
+  if (value.length>=5){
     callback()
   }else{
     callback(new Error('账号5-10位'))
