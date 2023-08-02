@@ -3,11 +3,13 @@ import {reqLogin} from "@/api/user";
 import type {loginForm, loginResponseData} from "@/api/user/type.ts";
 import type {userState} from "@/store/modules/types/types.ts";
 import {GET_TOKEN, SET_TOKEN} from "@/utils/token.ts";
+import {constantRoute} from "@/router/routes.ts";
 
 let useUserStore = defineStore('User', {
   state: (): userState => {
     return {
       token: GET_TOKEN(),
+      menuRoutes: constantRoute
     }
   },
   actions: {
